@@ -26,7 +26,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body { margin: 0; background: var(--field); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.58; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 ::selection { background: var(--green-soft); color: var(--ink); }
 a { color: inherit; text-decoration: none; }
@@ -42,8 +42,8 @@ ul, ol, dl { margin: 0; padding: 0; }
 :focus-visible { outline: 3px solid #58b09d; outline-offset: 3px; }
 
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--navy-deep); border-bottom: 1px solid rgba(255,255,255,.13); }
-.nav-shell { min-height: 80px; display: flex; align-items: center; gap: 44px; }
-.brand { width: 166px; flex: 0 0 auto; }
+.nav-shell { min-height: 92px; display: flex; align-items: center; gap: 40px; }
+.brand { width: 220px; flex: 0 0 auto; }
 .brand img { width: 100%; height: auto; }
 .primary-nav { margin-left: auto; display: flex; align-items: center; gap: 28px; color: var(--text-dark-muted); font-size: .88rem; font-weight: 610; }
 .primary-nav a { min-height: 44px; display: inline-flex; align-items: center; transition: color 180ms var(--ease); }
@@ -324,6 +324,9 @@ ul, ol, dl { margin: 0; padding: 0; }
 .footer-grid a { color: var(--white); }
 
 @media (max-width: 1100px) {
+  .nav-shell { gap: 28px; }
+  .brand { width: 196px; }
+  .primary-nav { gap: 20px; }
   .hero-copy-grid, .why-grid, .journey-grid { gap: 60px; }
   .hero-copy-grid { grid-template-columns: 1.1fr .7fr; }
   .hero h1 { font-size: clamp(3.4rem, 6.5vw, 5rem); }
@@ -370,8 +373,8 @@ ul, ol, dl { margin: 0; padding: 0; }
   :root { --shell: calc(100% - 28px); }
   body { font-size: 15px; }
   .site-header { position: relative; }
-  .nav-shell { min-height: 70px; }
-  .brand { width: 142px; }
+  .nav-shell { min-height: 72px; gap: 16px; }
+  .brand { width: 150px; }
   .nav-cta { min-height: 40px; padding: 0 11px; font-size: .72rem; }
   .nav-cta .arrow { display: none; }
   .hero { padding-top: 62px; }
@@ -436,6 +439,12 @@ ul, ol, dl { margin: 0; padding: 0; }
   .contact-expectations > div { grid-template-columns: 100px minmax(0, 1fr); gap: 16px; }
   .footer-grid { grid-template-columns: 1fr; gap: 18px; }
   .footer-grid > div { justify-content: space-between; }
+}
+
+@media (max-width: 360px) {
+  .nav-shell { gap: 12px; }
+  .brand { width: 132px; }
+  .nav-cta { padding-inline: 9px; font-size: .68rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

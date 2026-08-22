@@ -15,7 +15,7 @@ export default function Home() {
       <header className="site-header">
         <div className="shell nav-shell">
           <a className="brand" href="#top" aria-label="ClearGate home">
-            <img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="166" height="48" />
+            <img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="220" height="51" />
           </a>
           <nav className="primary-nav" aria-label="Primary navigation">
             <a href="#platform">Platform</a>
