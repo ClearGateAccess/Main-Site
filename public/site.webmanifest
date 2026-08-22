@@ -1,0 +1,11 @@
+{
+  "name": "ClearGate",
+  "short_name": "ClearGate",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#F3F8F6",
+  "theme_color": "#102431",
+  "icons": [
+    {"src":"favicon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}
