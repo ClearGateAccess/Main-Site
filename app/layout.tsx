@@ -8,9 +8,9 @@ const absoluteAsset = (path: string) => `${siteUrl}${path}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
-  title: "ClearGate — Controlled Infrastructure for Nonprescription Access",
+  title: "ClearGate — ACNU Infrastructure for Pharmaceutical Sponsors",
   description:
-    "Validated infrastructure for pharmaceutical companies developing and operating technology-assisted nonprescription access programs.",
+    "Controlled infrastructure for pharmaceutical companies developing and operating Additional Condition for Nonprescription Use (ACNU) programs.",
   alternates: { canonical: `${siteUrl}/` },
   manifest: publicAsset("/site.webmanifest"),
   icons: {
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
     type: "website",
     url: `${siteUrl}/`,
     siteName: "ClearGate",
-    title: "ClearGate — Controlled Infrastructure for Nonprescription Access",
+    title: "ClearGate — ACNU Infrastructure for Pharmaceutical Sponsors",
     description:
-      "Validated infrastructure for pharmaceutical companies developing and operating technology-assisted nonprescription access programs.",
+      "Controlled infrastructure for pharmaceutical companies developing and operating Additional Condition for Nonprescription Use (ACNU) programs.",
     images: [{ url: absoluteAsset("/og-cleargate.png"), width: 1200, height: 630, alt: "ClearGate — verified access, confident delivery" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClearGate — Controlled Infrastructure for Nonprescription Access",
+    title: "ClearGate — ACNU Infrastructure for Pharmaceutical Sponsors",
     description:
-      "Validated infrastructure for pharmaceutical companies developing and operating technology-assisted nonprescription access programs.",
+      "Controlled infrastructure for pharmaceutical companies developing and operating Additional Condition for Nonprescription Use (ACNU) programs.",
     images: [absoluteAsset("/og-cleargate.png")],
   },
 };
@@ -43,7 +43,7 @@ const organizationSchema = {
   url: `${siteUrl}/`,
   logo: absoluteAsset("/cleargate-logo.png"),
   description:
-    "Controlled infrastructure for pharmaceutical companies developing and operating technology-assisted nonprescription access programs.",
+    "Controlled infrastructure for pharmaceutical companies developing and operating Additional Condition for Nonprescription Use (ACNU) programs.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

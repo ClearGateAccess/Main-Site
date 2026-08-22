@@ -1,0 +1,52 @@
+name: Deploy ClearGate contact API
+
+on:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "contact-api-worker/**"
+      - ".github/workflows/deploy-contact-api.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "cleargate-contact-api"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: contact-api-worker/package-lock.json
+
+      - name: Install Worker dependencies
+        working-directory: contact-api-worker
+        run: npm ci
+
+      - name: Verify Worker
+        working-directory: contact-api-worker
+        run: npm run check
+
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: contact-api-worker
+          command: deploy
+          secrets: |
+            RESEND_API_KEY
+            TURNSTILE_SECRET_KEY
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}

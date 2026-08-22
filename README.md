@@ -1,6 +1,6 @@
 # ClearGate — GitHub Pages production site
 
-This package is configured as a fully static Next.js export for GitHub Pages. It does not require a Node server, Cloudflare Worker, database, or runtime environment variables after deployment.
+This package is configured as a fully static Next.js export for GitHub Pages. It positions ClearGate as controlled infrastructure for pharmaceutical companies developing and operating Additional Condition for Nonprescription Use (ACNU) programs and adjacent Rx-to-nonprescription initiatives. The marketing site does not require a Node server or database. Contact inquiries are handled separately by the included Cloudflare `contact-api` Worker so GitHub Pages remains entirely static.
 
 ## Fast deployment
 
@@ -18,6 +18,28 @@ The workflow uses GitHub's official Pages actions and automatically handles both
 - `https://cleargateaccess.com/`
 
 Asset paths are generated from GitHub's reported Pages base path, so logos, CSS, JavaScript, favicons, and the manifest continue working before and after the custom domain is connected.
+
+## Contact form and email delivery
+
+The closing program-inquiry form posts to
+`https://contact-api.cleargateaccess.com/contact`. The included Worker validates
+the request, verifies Cloudflare Turnstile, applies rate limiting, and sends the
+inquiry to `contact@cleargateaccess.com` through Resend.
+
+Before enabling the form in production:
+
+1. Verify `cleargateaccess.com` as a sending domain in Resend.
+2. Create a Cloudflare Turnstile widget for `cleargateaccess.com` and `www.cleargateaccess.com`.
+3. Add the GitHub repository variable `TURNSTILE_SITE_KEY` containing the public Turnstile site key.
+4. Add the repository secrets `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `RESEND_API_KEY`, and `TURNSTILE_SECRET_KEY`.
+5. Run **Deploy ClearGate contact API** from the repository’s **Actions** tab, or push a change under `contact-api-worker/`.
+6. Confirm `https://contact-api.cleargateaccess.com/health` returns a JSON status of `ok`.
+
+The optional repository variable `CONTACT_API_URL` can override the default
+endpoint. Keep it unset when using the supplied custom Worker domain.
+
+Detailed Worker setup and manual deployment instructions are in
+`contact-api-worker/README.md`.
 
 ## Custom domain
 

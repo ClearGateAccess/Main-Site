@@ -1,0 +1,17 @@
+{
+  "name": "cleargate-contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260822.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.125.0"
+  }
+}
