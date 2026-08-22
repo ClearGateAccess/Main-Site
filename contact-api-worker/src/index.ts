@@ -28,6 +28,7 @@ const PROGRAM_STAGES: Record<string, string> = {
   "candidate-feasibility": "ACNU candidate or feasibility review",
   "active-switch-program": "Active ACNU or switch program",
   "study-validation": "ACNU study or validation planning",
+  "physician-mediated-rx": "Clinician-mediated prescription pathway",
   "retail-integration": "Retail or pharmacy integration",
   other: "Another operating need",
 };

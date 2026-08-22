@@ -123,7 +123,7 @@ export default function ContactForm() {
 
         <div className="form-intro">
           <h3>Start a program conversation</h3>
-          <p>Tell us where the product or program stands today.</p>
+          <p>Tell us where the product or access program stands today.</p>
         </div>
 
         <div className="form-fields">
@@ -182,6 +182,7 @@ export default function ContactForm() {
               <option value="candidate-feasibility">ACNU candidate or feasibility review</option>
               <option value="active-switch-program">Active ACNU or switch program</option>
               <option value="study-validation">ACNU study or validation planning</option>
+              <option value="physician-mediated-rx">Clinician-mediated prescription pathway</option>
               <option value="retail-integration">Retail or pharmacy integration</option>
               <option value="other">Another operating need</option>
             </select>
@@ -194,7 +195,7 @@ export default function ContactForm() {
               name="details"
               rows={5}
               maxLength={2500}
-              placeholder="Proposed ACNU, product stage, intended access channels, study needs, retailer environment, or evidence requirements."
+              placeholder="Access model, product stage, intended channels, clinician or retailer involvement, study needs, or evidence requirements."
               required
             />
           </div>

@@ -31,11 +31,15 @@ export default function Home() {
         <section className="hero" id="top">
           <div className="shell hero-copy-grid">
             <div className="hero-copy">
-              <p className="hero-context">Purpose-built infrastructure for pharmaceutical ACNU programs</p>
-              <h1>From approved criteria to controlled consumer access.</h1>
+              <p className="hero-context">Controlled infrastructure for sponsor-defined medication access</p>
+              <h1>From approved criteria to controlled medication access.</h1>
             </div>
             <div className="hero-support">
-              <p>ClearGate is designed specifically around the FDA&apos;s Additional Condition for Nonprescription Use (ACNU) framework. It turns sponsor-defined criteria into deterministic qualification, validated releases, retailer authorization, operational monitoring, and traceable evidence.</p>
+              <p>ClearGate&apos;s initial focus is the FDA&apos;s Additional Condition for Nonprescription Use (ACNU) framework and adjacent Rx-to-nonprescription programs. Its controlled foundation can support additional medication-access models as the platform evolves.</p>
+              <dl className="hero-scope" aria-label="ClearGate platform scope">
+                <div><dt>Initial focus</dt><dd>ACNU and Rx-to-nonprescription development</dd></div>
+                <div><dt>Designed to extend</dt><dd>Clinician-mediated prescription pathways with licensed clinicians retaining medical judgment</dd></div>
+              </dl>
               <div className="hero-actions">
                 <a className="button button-light" href="#contact">Discuss a sponsor program</a>
                 <a className="text-link" href="#evidence">Inspect the evidence chain <Arrow /></a>
@@ -142,14 +146,14 @@ export default function Home() {
         <section className="why-section" id="platform">
           <div className="shell why-grid">
             <div className="section-statement">
-              <span className="section-index">The ACNU operating problem</span>
+              <span className="section-index">Initial use case: ACNU</span>
               <h2>The assessment is only the visible step.</h2>
               <div className="entry-points" aria-label="Common ClearGate program entry points">
                 <p>Common entry points</p>
                 <ul>
-                  <li><strong>Feasibility</strong><span>Evaluate an Rx-to-nonprescription candidate and proposed ACNU operating model.</span></li>
-                  <li><strong>Study</strong><span>Connect ACNU configuration, validation, deployment, and consumer evidence.</span></li>
-                  <li><strong>Commercial</strong><span>Operate an approved ACNU across consumer and retail channels.</span></li>
+                  <li><strong>Feasibility</strong><span>Evaluate a candidate asset and the proposed access pathway.</span></li>
+                  <li><strong>Study</strong><span>Connect controlled configuration, validation, deployment, and evidence.</span></li>
+                  <li><strong>Commercial</strong><span>Operate the approved release across consumer and retail channels.</span></li>
                 </ul>
               </div>
             </div>
@@ -171,7 +175,14 @@ export default function Home() {
               <span className="section-index light">Product proof</span>
               <h2>Every material decision remains reconstructable.</h2>
             </div>
-            <p>ClearGate connects sponsor intent, configuration, validation, approval, release, assessment, decision, authorization, and downstream verification in one operating history.</p>
+            <div className="section-brief dark">
+              <p>ClearGate connects sponsor intent, configuration, validation, approval, release, assessment, decision, authorization, and downstream verification in one operating history.</p>
+              <dl>
+                <div><dt>Exact release</dt><dd>The approved version that produced the result</dd></div>
+                <div><dt>Decision basis</dt><dd>Requirements, rules, reason codes, and validation</dd></div>
+                <div><dt>Downstream state</dt><dd>Authorization, verification, and redemption history</dd></div>
+              </dl>
+            </div>
           </div>
 
           <div className="shell evidence-board">
@@ -201,18 +212,24 @@ export default function Home() {
 
         <section className="domains-section">
           <div className="shell domains-head">
-            <h2>One controlled model across the ACNU lifecycle.</h2>
-            <p>ClearGate spans ACNU feasibility, development, study, commercial operation, and post-launch control without forcing sponsors to stitch together disconnected point solutions.</p>
+            <h2>One controlled model from development to medication access.</h2>
+            <div className="section-brief">
+              <p>The platform connects requirements, runtime behavior, authorization, monitoring, and evidence without forcing sponsors to stitch together disconnected point solutions.</p>
+              <dl>
+                <div><dt>Current market</dt><dd>ACNU and adjacent Rx-to-nonprescription programs</dd></div>
+                <div><dt>Platform horizon</dt><dd>Other sponsor-defined access pathways, including future clinician-mediated prescription workflows</dd></div>
+              </dl>
+            </div>
           </div>
           <div className="shell domain-rows">
             <article>
-              <span>Develop</span><h3>Build and validate the ACNU.</h3><p>Turn proposed key elements, qualifying criteria, and sponsor requirements into controlled questions, deterministic rules, studies, tests, approvals, and release evidence.</p><ul><li>Portfolio</li><li>Designer</li><li>Rules</li><li>Study</li></ul>
+              <span>Develop</span><h3>Build and validate the access program.</h3><p>Turn clinical, regulatory, and operational requirements into controlled questions, rules, studies, tests, approvals, and release evidence.</p><ul><li>Portfolio</li><li>Designer</li><li>Rules</li><li>Study</li></ul>
             </article>
             <article>
-              <span>Operate</span><h3>Run the approved ACNU across channels.</h3><p>Deliver the approved consumer experience, issue minimal signed authorization, and connect physical and ecommerce retail environments.</p><ul><li>Runtime</li><li>Access</li><li>Integrate</li></ul>
+              <span>Operate</span><h3>Run the approved pathway across channels.</h3><p>Deliver the approved experience, issue minimal signed authorization, and connect physical, ecommerce, and future clinician-mediated environments.</p><ul><li>Runtime</li><li>Access</li><li>Integrate</li></ul>
             </article>
             <article>
-              <span>Control</span><h3>Monitor, investigate, reconstruct.</h3><p>Detect suspected ACNU failures, identify affected decisions, manage corrective action and controlled change, and preserve the evidence behind every material state.</p><ul><li>Vigilance</li><li>Evidence</li><li>Change control</li><li>Audit & quality</li></ul>
+              <span>Control</span><h3>Monitor, investigate, reconstruct.</h3><p>Detect pathway failures, identify affected decisions, manage corrective action and controlled change, and preserve the evidence behind every material state.</p><ul><li>Vigilance</li><li>Evidence</li><li>Change control</li><li>Audit & quality</li></ul>
             </article>
           </div>
         </section>
@@ -238,8 +255,15 @@ export default function Home() {
 
         <section className="control-section" id="control">
           <div className="shell control-head">
-            <div><span className="section-index amber">ACNU failure readiness</span><h2>Failure handling is part of the product.</h2></div>
-            <p>Signals become suspected ACNU failure investigations, affected decisions can be identified, corrective action stays linked to evidence, and uncertainty never becomes qualification.</p>
+            <div><span className="section-index amber">Controlled failure response</span><h2>Failure handling is part of the product.</h2></div>
+            <div className="section-brief">
+              <p>Signals become access-pathway investigations, affected decisions can be identified, corrective action stays linked to evidence, and uncertainty never becomes qualification.</p>
+              <dl>
+                <div><dt>Detect</dt><dd>Convert operational signals into controlled cases</dd></div>
+                <div><dt>Bound impact</dt><dd>Identify affected assessments, decisions, and releases</dd></div>
+                <div><dt>Correct</dt><dd>Link CAPA, validation, approval, and controlled change</dd></div>
+              </dl>
+            </div>
           </div>
 
           <div className="shell incident-record">
@@ -265,12 +289,16 @@ export default function Home() {
         <section className="responsibility-section" id="responsibility">
           <div className="shell responsibility-head">
             <h2>The sponsor keeps clinical control.</h2>
-            <p>ClearGate operationalizes sponsor-defined ACNU programs without becoming the prescriber, pharmacy, or independent regulatory decision-maker. Each party stays inside an explicit responsibility boundary.</p>
+            <div className="section-brief">
+              <p>ClearGate operationalizes sponsor-defined access programs without becoming the prescriber, pharmacy, or independent regulatory decision-maker. Each party stays inside an explicit responsibility boundary.</p>
+              <p className="future-boundary"><strong>Future clinician-mediated pathways:</strong> licensed clinicians would retain clinical judgment and prescribing responsibility; ClearGate would provide controlled workflow, integration, authorization, and evidence infrastructure.</p>
+            </div>
           </div>
           <div className="shell responsibility-grid">
             <article><span>01</span><h3>Pharmaceutical sponsor</h3><ul><li>Clinical criteria and regulatory strategy</li><li>Approved consumer content</li><li>Drug safety and sponsor obligations</li><li>Program oversight and accountability</li></ul></article>
             <article className="cleargate-role"><span>02</span><h3>ClearGate</h3><ul><li>Controlled configuration and deterministic execution</li><li>Validation evidence and release controls</li><li>Access control and security infrastructure</li><li>Monitoring, incident handling, and integration</li></ul></article>
             <article><span>03</span><h3>Retailer</h3><ul><li>Transaction processing and inventory</li><li>Authorization verification</li><li>Retail-specific consumer obligations</li><li>Authorization enforcement within its channel</li></ul></article>
+            <article className="future-role"><span>04 · Future pathways</span><h3>Licensed clinician</h3><ul><li>Independent clinical assessment</li><li>Medical judgment and prescribing responsibility</li><li>Patient escalation and follow-up</li><li>Clinician-specific records and obligations</li></ul></article>
           </div>
         </section>
 
@@ -279,10 +307,10 @@ export default function Home() {
             <div className="contact-statement">
               <img src={asset("/cleargate-symbol-reversed.svg")} alt="" width="74" height="74" />
               <h2>Bring the program.<br />ClearGate brings the infrastructure.</h2>
-              <p>Bring a candidate asset, proposed ACNU, active Rx-to-nonprescription switch program, or study requirement. Start with feasibility or carry the same controlled model into study, commercial runtime, retailer verification, and vigilance.</p>
+              <p>Bring a candidate asset, proposed ACNU, active Rx-to-nonprescription switch, clinician-mediated access concept, or study requirement. Start with feasibility or carry the same controlled model into study, runtime, downstream verification, and vigilance.</p>
               <dl className="contact-expectations">
                 <div><dt>Best suited for</dt><dd>Pharmaceutical sponsors, research partners, and retail integration leaders</dd></div>
-                <div><dt>First discussion</dt><dd>ACNU concept, program stage, channels, responsibilities, evidence, and integration needs</dd></div>
+                <div><dt>First discussion</dt><dd>Access model, program stage, channels, responsibility boundaries, evidence, and integration needs</dd></div>
                 <div><dt>Response</dt><dd>Within one business day</dd></div>
               </dl>
               <p className="contact-alternative">Prefer email? <a href="mailto:contact@cleargateaccess.com">contact@cleargateaccess.com</a></p>
@@ -295,7 +323,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="shell footer-grid">
           <img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="142" height="42" />
-          <p>Controlled infrastructure for ACNU and technology-assisted nonprescription access.</p>
+          <p>Controlled infrastructure for sponsor-defined medication access.</p>
           <div><a href="#top">Back to top ↑</a><span>© 2026 ClearGate</span></div>
         </div>
       </footer>

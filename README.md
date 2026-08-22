@@ -1,6 +1,6 @@
 # ClearGate — GitHub Pages production site
 
-This package is configured as a fully static Next.js export for GitHub Pages. It positions ClearGate as controlled infrastructure for pharmaceutical companies developing and operating Additional Condition for Nonprescription Use (ACNU) programs and adjacent Rx-to-nonprescription initiatives. The marketing site does not require a Node server or database. Contact inquiries are handled separately by the included Cloudflare `contact-api` Worker so GitHub Pages remains entirely static.
+This package is configured as a fully static Next.js export for GitHub Pages. It positions ClearGate as controlled infrastructure for sponsor-defined medication access, with ACNU and adjacent Rx-to-nonprescription initiatives as the initial market and clinician-mediated prescription pathways as a clearly labeled future extension. The marketing site does not require a Node server or database. Contact inquiries are handled separately by the included Cloudflare `contact-api` Worker so GitHub Pages remains entirely static.
 
 ## Fast deployment
 
