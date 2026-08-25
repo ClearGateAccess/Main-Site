@@ -1,3 +1,5 @@
+import ContactForm from "./components/ContactForm";
+
 const Check = () => <span className="status-check" aria-hidden="true">✓</span>;
 
 const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
@@ -302,8 +304,19 @@ export default function Home() {
 
         <section className="contact-section" id="contact">
           <div className="shell contact-grid">
-            <div><img src={asset("/cleargate-symbol-reversed.svg")} alt="" width="84" height="84" /><span className="section-label light">Sponsor and partner inquiries</span><h2>Start with the program—not a software shopping list.</h2></div>
-            <div className="contact-copy"><p>Bring a candidate asset, active ACNU or switch program, study requirement, pharmacy workflow, or clinician-mediated access concept. We will start with responsibility boundaries, success criteria, and the smallest useful demonstration or design engagement.</p><dl><div><dt>Good first attendees</dt><dd>Commercial, regulatory, clinical, quality, research, and technical owners</dd></div><div><dt>Useful starting material</dt><dd>Program hypothesis, target channel, open risks, and timing</dd></div><div><dt>Current priority</dt><dd>Design sponsors, research collaborators, pilot channels, and advisors</dd></div></dl><a className="button button-green" href="mailto:contact@cleargateaccess.com?subject=ClearGate%20sponsor%20or%20partner%20inquiry">Discuss a program <Arrow /></a><a className="contact-email" href="mailto:contact@cleargateaccess.com">contact@cleargateaccess.com</a></div>
+            <div className="contact-statement">
+              <img src={asset("/cleargate-symbol-reversed.svg")} alt="" width="84" height="84" />
+              <span className="section-label light">Sponsor and partner inquiries</span>
+              <h2>Start with the program—not a software shopping list.</h2>
+              <p>Bring a candidate asset, active ACNU or switch program, study requirement, pharmacy workflow, or clinician-mediated access concept. We will start with responsibility boundaries, success criteria, and the smallest useful demonstration or design engagement.</p>
+              <dl className="contact-expectations">
+                <div><dt>Good first attendees</dt><dd>Commercial, regulatory, clinical, quality, research, and technical owners</dd></div>
+                <div><dt>Useful starting material</dt><dd>Program hypothesis, target channel, open risks, and timing</dd></div>
+                <div><dt>Current priority</dt><dd>Design sponsors, research collaborators, pilot channels, and advisors</dd></div>
+              </dl>
+              <p className="contact-alternative">Prefer email? <a href="mailto:contact@cleargateaccess.com">contact@cleargateaccess.com</a></p>
+            </div>
+            <ContactForm />
           </div>
         </section>
       </main>
