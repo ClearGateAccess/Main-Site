@@ -8,9 +8,17 @@ const absoluteAsset = (path: string) => `${siteUrl}${path}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
-  title: "ClearGate — Controlled Medication Access Infrastructure",
+  title: "ClearGate — Controlled Medication-Access Infrastructure",
   description:
-    "Controlled infrastructure for pharmaceutical medication-access programs, beginning with ACNU and Rx-to-nonprescription development.",
+    "Enterprise infrastructure for pharmaceutical sponsors to design, validate, operate, authorize, integrate, and evidence controlled medication-access programs.",
+  keywords: [
+    "controlled medication access",
+    "ACNU",
+    "Additional Condition for Nonprescription Use",
+    "pharmaceutical software",
+    "authorization verification",
+    "Rx-to-nonprescription",
+  ],
   alternates: { canonical: `${siteUrl}/` },
   manifest: publicAsset("/site.webmanifest"),
   icons: {
@@ -22,16 +30,16 @@ export const metadata: Metadata = {
     type: "website",
     url: `${siteUrl}/`,
     siteName: "ClearGate",
-    title: "ClearGate — Controlled Medication Access Infrastructure",
+    title: "ClearGate — Controlled Medication-Access Infrastructure",
     description:
-      "Controlled infrastructure for pharmaceutical medication-access programs, beginning with ACNU and Rx-to-nonprescription development.",
+      "Design, validate, operate, authorize, integrate, and evidence controlled medication-access programs.",
     images: [{ url: absoluteAsset("/og-cleargate.png"), width: 1200, height: 630, alt: "ClearGate — verified access, confident delivery" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClearGate — Controlled Medication Access Infrastructure",
+    title: "ClearGate — Controlled Medication-Access Infrastructure",
     description:
-      "Controlled infrastructure for pharmaceutical medication-access programs, beginning with ACNU and Rx-to-nonprescription development.",
+      "Design, validate, operate, authorize, integrate, and evidence controlled medication-access programs.",
     images: [absoluteAsset("/og-cleargate.png")],
   },
 };
@@ -43,7 +51,7 @@ const organizationSchema = {
   url: `${siteUrl}/`,
   logo: absoluteAsset("/cleargate-logo.png"),
   description:
-    "Controlled infrastructure for pharmaceutical medication-access programs, beginning with ACNU and Rx-to-nonprescription development.",
+    "Controlled infrastructure for pharmaceutical sponsors developing and operating technology-assisted medication-access programs, with ACNU as the initial program focus.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
