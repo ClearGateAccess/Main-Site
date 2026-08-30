@@ -28,14 +28,14 @@ export default function Home() {
       </header>
 
       <main id="main">
-        <section className="hero" id="top">
+        <section className="hero" id="top" aria-labelledby="hero-heading">
           <div className="shell hero-copy-grid">
             <div className="hero-copy">
-              <p className="hero-context">Controlled medication-access infrastructure</p>
-              <h1>Build the access pathway. Control every handoff.</h1>
+              <p className="hero-context">Controlled medication-access infrastructure for pharmaceutical sponsors</p>
+              <h1 id="hero-heading">Build the access pathway. Control every handoff.</h1>
             </div>
             <div className="hero-support">
-              <p>ClearGate gives pharmaceutical sponsors the program controls, deterministic runtime, authorization exchange, and evidence infrastructure needed to move from approved criteria to a controlled transaction.</p>
+              <p>ClearGate translates sponsor-approved criteria into deterministic program logic, validated releases, minimal authorization, downstream verification, and reconstructable evidence—from development through controlled transaction.</p>
               <div className="hero-actions">
                 <a className="button button-light" href="#contact">Discuss a sponsor program</a>
                 <a className="text-link" href="#products">See the operating model <Arrow /></a>
@@ -49,8 +49,8 @@ export default function Home() {
             <div><span>Decision model</span><strong>Deterministic and sponsor controlled</strong></div>
           </div>
 
-          <div className="shell product-stage" aria-label="Synthetic sponsor program workspace demonstration">
-            <div className="product-frame sponsor-frame">
+          <div className="shell product-stage">
+            <figure className="product-frame sponsor-frame" aria-label="Synthetic sponsor program workspace demonstration">
               <div className="product-topbar">
                 <div className="window-brand">
                   <img src={asset("/cleargate-symbol-reversed.svg")} alt="" width="28" height="28" />
@@ -88,7 +88,7 @@ export default function Home() {
                     <div>
                       <div className="breadcrumb">Programs / Virelixa / Controlled releases</div>
                       <div className="release-title-row">
-                        <h2>Release 1.1.0</h2>
+                        <strong className="release-ui-title">Release 1.1.0</strong>
                         <span className="verified-badge"><Check /> Ready for controlled release</span>
                       </div>
                       <p>Candidate manifest · CR-VRX-0007 · generated 25 Aug 2026, 09:42 ET</p>
@@ -106,7 +106,7 @@ export default function Home() {
                   <div className="release-content">
                     <section className="trace-panel" aria-labelledby="trace-heading">
                       <div className="panel-heading">
-                        <div><h3 id="trace-heading">Traceability coverage</h3><p>Requirement-to-test lineage for this release candidate</p></div>
+                        <div><strong className="panel-title" id="trace-heading">Traceability coverage</strong><p>Requirement-to-test lineage for this release candidate</p></div>
                         <span className="coverage">100% covered</span>
                       </div>
                       <div className="trace-table" role="table" aria-label="Synthetic requirement traceability">
@@ -129,7 +129,7 @@ export default function Home() {
                     </section>
 
                     <aside className="approval-panel" aria-label="Release approval record">
-                      <div className="panel-heading"><div><h3>Approval record</h3><p>Signed release gates</p></div></div>
+                      <div className="panel-heading"><div><strong className="panel-title">Approval record</strong><p>Signed release gates</p></div></div>
                       <ul className="approval-list">
                         <li><Check /><span><strong>Clinical</strong><small>Dr. Maya Rowan · 08:45</small></span></li>
                         <li><Check /><span><strong>Regulatory</strong><small>Elena Voss · 08:58</small></span></li>
@@ -141,16 +141,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="demo-bar"><span>Synthetic data · fictional products, people, approvals, and metrics.</span></div>
-            </div>
+              <figcaption className="demo-bar"><span>Synthetic data · fictional products, people, approvals, and metrics.</span></figcaption>
+            </figure>
           </div>
         </section>
 
-        <section className="platform-section" id="platform">
+        <section className="platform-section" id="platform" aria-labelledby="platform-heading">
           <div className="shell platform-grid">
             <div className="section-statement">
               <span className="section-label">The operating problem</span>
-              <h2>The digital assessment is only the visible step.</h2>
+              <h2 id="platform-heading">The digital assessment is only the visible step.</h2>
             </div>
             <div className="platform-copy">
               <p className="lede">ClearGate is initially designed around Additional Condition for Nonprescription Use (ACNU) programs, where a product-specific technology condition may become part of the path to nonprescription access.</p>
@@ -165,13 +165,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="products-section" id="products">
+        <section className="products-section" id="products" aria-labelledby="products-heading">
           <div className="shell products-intro">
             <div>
               <span className="section-label light">Platform architecture</span>
-              <h2>Two products. One controlled operating model.</h2>
+              <h2 id="products-heading">Two products. One controlled operating model.</h2>
             </div>
-            <p>The enterprise demo separates sponsor program control from downstream transaction enforcement. Each product has a narrow responsibility, explicit trust boundary, and auditable handoff.</p>
+            <p>The platform separates sponsor program control from downstream transaction enforcement. Each product has a narrow responsibility, explicit trust boundary, and auditable handoff.</p>
           </div>
 
           <div className="shell product-system">
@@ -195,13 +195,13 @@ export default function Home() {
           <p className="shell interoperability-note"><strong>Modular by design:</strong> the authorization network can accept an approved fulfillment from the ClearGate program platform or another approved upstream operationalization. It does not make the clinical decision and does not turn an authorization into a prescription.</p>
         </section>
 
-        <section className="network-demo-section" aria-labelledby="network-demo-heading">
+        <section className="network-demo-section" id="authorization-network" aria-labelledby="network-demo-heading">
           <div className="shell network-demo-head">
             <div><span className="section-label">Downstream transaction surface</span><h2 id="network-demo-heading">Authorization that can move through the channel.</h2></div>
             <p>Verification, redemption, idempotent retry, reversal, product lifecycle control, and transaction lineage are demonstrated across pharmacy and ecommerce reference flows.</p>
           </div>
 
-          <div className="shell network-frame" aria-label="Synthetic authorization network and pharmacy verification demonstration">
+          <figure className="shell network-frame" aria-label="Synthetic authorization network and pharmacy verification demonstration">
             <div className="network-topbar">
               <img src={asset("/passage-logo.png")} alt="Passage" width="150" height="48" />
               <div><span className="network-health"><i /> All services operational</span></div>
@@ -214,20 +214,20 @@ export default function Home() {
 
               <div className="network-main">
                 <div className="network-page-head">
-                  <div><span>BRIGHTWELL PHARMACY GROUP · BWPG-001</span><h3>Authorization verification</h3><p>Product detected at checkout · Location AVL-014</p></div>
+                  <div><span>BRIGHTWELL PHARMACY GROUP · BWPG-001</span><strong className="network-ui-title">Authorization verification</strong><p>Product detected at checkout · Location AVL-014</p></div>
                   <span className="partner-badge">Partner authenticated</span>
                 </div>
 
                 <div className="verification-layout">
                   <section className="pos-panel" aria-labelledby="pos-heading">
-                    <div className="panel-heading"><div><h4 id="pos-heading">Brightwell POS</h4><p>Reference pharmacy adapter</p></div></div>
+                    <div className="panel-heading"><div><strong className="panel-title" id="pos-heading">Brightwell POS</strong><p>Reference pharmacy adapter</p></div></div>
                     <div className="product-detected"><div className="pack-mini"><img src={asset("/cleargate-symbol.svg")} alt="" width="36" height="36" /></div><div><span>Product detected</span><strong>Virelixa 5 mg</strong><small>NDC 00000-0000-00 · Qty 1</small></div><b>Access required</b></div>
                     <div className="scan-zone"><span>Authorization presented</span><code>cgp1.eyJraWQiOiJwYXNzYWdlLWtleS0wMSI…</code></div>
                     <div className="verification-result"><Check /><div><strong>Authorization valid</strong><span>Single-use · product and location policy matched</span></div><b>VALID</b></div>
                   </section>
 
                   <aside className="transaction-panel" aria-label="Synthetic transaction detail">
-                    <div className="panel-heading"><div><h4>Transaction state</h4><p>Append-only lifecycle</p></div></div>
+                    <div className="panel-heading"><div><strong className="panel-title">Transaction state</strong><p>Append-only lifecycle</p></div></div>
                     <dl><div><dt>Authorization</dt><dd>AUTH-VRX-829401</dd></div><div><dt>Retailer</dt><dd>BWPG-001</dd></div><div><dt>Location</dt><dd>AVL-014</dd></div><div><dt>Release</dt><dd>VRX 1.1.0</dd></div><div><dt>Policy</dt><dd>POL-VRX-SU-01</dd></div></dl>
                     <div className="transaction-state"><span>Current state</span><strong>VERIFIED</strong><small>Ready for atomic redemption</small></div>
                   </aside>
@@ -242,13 +242,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="demo-bar"><span>Synthetic data · fictional product, pharmacy, identity, and transaction records.</span></div>
-          </div>
+            <figcaption className="demo-bar"><span>Synthetic data · fictional product, pharmacy, identity, and transaction records.</span></figcaption>
+          </figure>
         </section>
 
-        <section className="evidence-section" id="evidence">
+        <section className="evidence-section" id="evidence" aria-labelledby="evidence-heading">
           <div className="shell evidence-intro">
-            <div><span className="section-label light">Evidence lineage</span><h2>Every material decision remains reconstructable.</h2></div>
+            <div><span className="section-label light">Evidence lineage</span><h2 id="evidence-heading">Every material decision remains reconstructable.</h2></div>
             <p>ClearGate connects sponsor intent, configuration, validation, approval, release, assessment, decision, authorization, verification, and transaction state in one inspectable operating history.</p>
           </div>
 
@@ -267,8 +267,8 @@ export default function Home() {
           <p className="shell synthetic-caption">Synthetic demonstration data. No real drug, consumer, clinical criteria, identity, or transaction is represented.</p>
         </section>
 
-        <section className="capabilities-section">
-          <div className="shell capabilities-head"><h2>Full lifecycle coverage without stitching together point solutions.</h2><p>The enterprise demo is built to show the operating depth required around an access pathway—not simply the front-end assessment.</p></div>
+        <section className="capabilities-section" id="capabilities" aria-labelledby="capabilities-heading">
+          <div className="shell capabilities-head"><h2 id="capabilities-heading">Full lifecycle coverage without stitching together point solutions.</h2><p>ClearGate’s operating model covers the work around an access pathway—not simply the front-end assessment.</p></div>
           <div className="shell capability-rows">
             <article><span>Feasibility</span><h3>Portfolio and program definition</h3><p>Candidate products, sponsor objectives, product releases, operationalizations, and program boundaries remain explicitly controlled.</p><ul><li>Portfolio</li><li>Program ownership</li><li>Tenant isolation</li></ul></article>
             <article><span>Design</span><h3>Questionnaires and deterministic rules</h3><p>Approved questions, criteria, reason codes, outcome messages, rule tests, and change history stay versioned and traceable.</p><ul><li>Designer</li><li>Rules</li><li>Validation</li></ul></article>
@@ -280,14 +280,14 @@ export default function Home() {
           <p className="shell demo-status-note"><strong>Current status:</strong> production-shaped enterprise demonstration. Commercial implementations require sponsor-specific validation, security qualification, operating procedures, partner certification, and contractual service design.</p>
         </section>
 
-        <section className="control-section" id="control">
-          <div className="shell control-head"><div><span className="section-label amber">Designed for adverse conditions</span><h2>Failure handling is part of the product.</h2></div><p>Signals become investigations, affected decisions and transactions can be identified, corrective action stays linked to evidence, and uncertainty never becomes qualification or a valid authorization.</p></div>
+        <section className="control-section" id="control" aria-labelledby="control-heading">
+          <div className="shell control-head"><div><span className="section-label amber">Designed for adverse conditions</span><h2 id="control-heading">Failure handling is part of the product.</h2></div><p>Signals become investigations, affected decisions and transactions can be identified, corrective action stays linked to evidence, and uncertainty never becomes qualification or a valid authorization.</p></div>
           <div className="shell incident-record"><div className="incident-header"><div><span className="signal-dot" /> Open investigation</div><strong>CASE-ACNU-0004</strong><span>Severity 2 · Synthetic demo</span></div><div className="incident-timeline"><div><span>Signal</span><strong>Malformed lab units</strong><small>14:02</small></div><div><span>Impact</span><strong>Assessments identified</strong><small>14:06</small></div><div><span>Root cause</span><strong>Adapter validation gap</strong><small>15:14</small></div><div><span>CAPA</span><strong>CAPA-0012 opened</strong><small>15:37</small></div><div className="resolved"><span>Controlled change</span><strong>Corrected release validated</strong><small>18:22</small></div></div></div>
           <div className="shell control-principles"><article><strong>Fail-closed behavior</strong><p>No reliable decision or authorization state becomes permitted access.</p></article><article><strong>Immutable released history</strong><p>Released configuration and ledger events cannot be silently rewritten.</p></article><article><strong>Separation of duties</strong><p>Authors, approvers, operators, source systems, and retailers remain distinct.</p></article><article><strong>Data minimization</strong><p>Each downstream actor receives only what its approved transaction requires.</p></article></div>
         </section>
 
-        <section className="partners-section" id="partners">
-          <div className="shell partners-intro"><div><span className="section-label">Design and launch partners</span><h2>Help shape the operating standard.</h2></div><p>ClearGate is seeking a small number of serious partners who can bring a real program, research objective, transaction channel, or regulated-operations perspective into the next stage of development.</p></div>
+        <section className="partners-section" id="partners" aria-labelledby="partners-heading">
+          <div className="shell partners-intro"><div><span className="section-label">Design and launch partners</span><h2 id="partners-heading">Help shape the operating standard.</h2></div><p>ClearGate is seeking a small number of serious partners who can bring a real program, research objective, transaction channel, or regulated-operations perspective into the next stage of development.</p></div>
           <div className="shell partner-rows">
             <article><div className="partner-type"><span>Sponsor</span><h3>Pharmaceutical and consumer-health companies</h3></div><p>Best fit: a commercially meaningful asset, an active or planned Rx-to-nonprescription program, or a controlled-access use case without a mature internal software platform.</p><ul><li>Candidate-program feasibility</li><li>Design engagement or LOI</li><li>Sponsor-led pilot planning</li></ul></article>
             <article><div className="partner-type"><span>Research</span><h3>CROs and consumer-behavior research organizations</h3></div><p>Partners equipped to design or operate label comprehension, self-selection, actual-use, human-factors, or adjacent research against a controlled program configuration.</p><ul><li>Study workflow design</li><li>Research-site operations</li><li>Evidence and data handoff</li></ul></article>
@@ -297,17 +297,17 @@ export default function Home() {
           <div className="shell first-engagement"><div><h3>A useful first engagement has four parts.</h3><p>We can begin before every downstream vendor or implementation detail is selected.</p></div><ol><li><span>1</span><strong>Choose a program</strong><small>Candidate asset, study, pathway, or channel pilot</small></li><li><span>2</span><strong>Define the boundary</strong><small>Owners, criteria, systems, evidence, and success measures</small></li><li><span>3</span><strong>Configure the model</strong><small>Synthetic workflow, rules, authorization, and integrations</small></li><li><span>4</span><strong>Plan the evidence</strong><small>Validation, research, pilot, and operating readiness</small></li></ol></div>
         </section>
 
-        <section className="responsibility-section" id="responsibility">
-          <div className="shell responsibility-head"><h2>Clear roles. No hidden transfer of judgment.</h2><p>ClearGate operationalizes approved medication-access programs without becoming the sponsor, prescriber, pharmacy, or independent regulatory decision-maker.</p></div>
+        <section className="responsibility-section" id="responsibility" aria-labelledby="responsibility-heading">
+          <div className="shell responsibility-head"><h2 id="responsibility-heading">Clear roles. No hidden transfer of judgment.</h2><p>ClearGate operationalizes approved medication-access programs without becoming the sponsor, prescriber, pharmacy, or independent regulatory decision-maker.</p></div>
           <div className="shell responsibility-grid"><article><span>Pharmaceutical sponsor</span><h3>Owns the product and program.</h3><ul><li>Clinical criteria and regulatory strategy</li><li>Approved consumer content</li><li>Drug safety and sponsor obligations</li><li>Program oversight and accountability</li></ul></article><article className="cleargate-role"><span>ClearGate</span><h3>Provides the controlled operating layer.</h3><ul><li>Configuration and deterministic execution</li><li>Validation evidence and release controls</li><li>Authorization exchange and integration</li><li>Monitoring, incidents, and traceability</li></ul></article><article><span>Licensed clinician · future pathways</span><h3>Retains medical judgment.</h3><ul><li>Clinical evaluation where required</li><li>Prescribing authority</li><li>Clinician-patient relationship</li><li>Professional and jurisdictional obligations</li></ul></article><article><span>Retail or research partner</span><h3>Performs its approved channel role.</h3><ul><li>Transaction or study operations</li><li>Authorization enforcement where applicable</li><li>Partner-specific consumer obligations</li><li>Evidence and exception handling</li></ul></article></div>
         </section>
 
-        <section className="contact-section" id="contact">
+        <section className="contact-section" id="contact" aria-labelledby="contact-heading">
           <div className="shell contact-grid">
             <div className="contact-statement">
               <img src={asset("/cleargate-symbol-reversed.svg")} alt="" width="84" height="84" />
               <span className="section-label light">Sponsor and partner inquiries</span>
-              <h2>Start with the program—not a software shopping list.</h2>
+              <h2 id="contact-heading">Start with the program—not a software shopping list.</h2>
               <p>Bring a candidate asset, active ACNU or switch program, study requirement, pharmacy workflow, or clinician-mediated access concept. We will start with responsibility boundaries, success criteria, and the smallest useful demonstration or design engagement.</p>
               <dl className="contact-expectations">
                 <div><dt>Good first attendees</dt><dd>Commercial, regulatory, clinical, quality, research, and technical owners</dd></div>
@@ -325,3 +325,4 @@ export default function Home() {
     </>
   );
 }
+
