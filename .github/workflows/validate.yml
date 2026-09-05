@@ -1,0 +1,58 @@
+name: Validate staged site changes
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      full_validation:
+        description: Build and verify the complete static site without deploying
+        type: boolean
+        default: true
+  workflow_call:
+    inputs:
+      full_validation:
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.event.pull_request.number || github.ref }}-${{ inputs.full_validation || false }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm test
+      - run: npm audit --audit-level=high
+      - name: Build the release candidate only when requested
+        if: ${{ inputs.full_validation }}
+        run: npm run build:pages
+        env:
+          NEXT_PUBLIC_SITE_URL: https://cleargateaccess.com
+          NEXT_PUBLIC_CONTACT_API_URL: ${{ vars.CONTACT_API_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY }}
+      - name: Verify exported content, accessibility structure, and SEO
+        if: ${{ inputs.full_validation }}
+        run: npm run verify:pages
+        env:
+          NEXT_PUBLIC_CONTACT_API_URL: ${{ vars.CONTACT_API_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY }}
+      - name: Save the candidate for review (no deployment)
+        if: ${{ inputs.full_validation }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: cleargate-site-candidate
+          path: out/
+          retention-days: 7
