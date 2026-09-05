@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a1922"/>
+  <svg x="64" y="46" width="380" height="88" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-label="ClearGate">
+<g transform="translate(0 0)">
+  <title id="title">ClearGate reversed symbol</title>
+  <desc id="desc">A squared light gate frame around a pharmaceutical product pack with a green verification check and crisp barcode.</desc>
+  <path fill="#F3F8F6" d="M14 14H106V92H114L120 98H98V22H22V98H0L6 92H14V14Z"/>
+  <path d="M36 37L60 28L83 37L60 46Z" fill="#F3F8F6"/>
+  <path d="M36 37L60 46V82L36 74Z" fill="#0A1922" stroke="#F3F8F6" stroke-width="1.4" stroke-linejoin="miter"/>
+  <path d="M60 46L83 37V74L60 82Z" fill="#0A1922" stroke="#F3F8F6" stroke-width="1.4" stroke-linejoin="miter"/>
+  <path d="M36 37L60 46L83 37" fill="none" stroke="#F3F8F6" stroke-width="1.4" stroke-linejoin="miter"/>
+  <path d="M65 54L78 50" stroke="#F3F8F6" stroke-width="1.9"/>
+  <path d="M65 60L75 57" stroke="#F3F8F6" stroke-width="1.9"/>
+  <path d="M65 66L72 64" stroke="#F3F8F6" stroke-width="1.9"/>
+  <path d="M66 70L70 74L78 65" fill="none" stroke="#1F6E5D" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M36 74L60 82V101L36 92Z" fill="#1F6E5D"/>
+  <path d="M60 82L83 74V92L60 101Z" fill="#1F6E5D"/>
+  <g fill="#F3F8F6">
+    <rect x="42.0" y="79.0" width="1.8" height="12.0"/><rect x="45.5" y="80.2" width="1.5" height="12.0"/><rect x="49.0" y="81.4" width="1.8" height="12.0"/><rect x="53.0" y="82.7" width="1.4" height="12.0"/><rect x="56.3" y="83.8" width="1.8" height="12.0"/><rect x="62.2" y="83.8" width="1.8" height="12.0"/><rect x="65.7" y="82.6" width="1.4" height="12.0"/><rect x="69.0" y="81.5" width="1.8" height="12.0"/><rect x="72.8" y="80.2" width="1.5" height="12.0"/><rect x="76.0" y="79.0" width="1.8" height="12.0"/>
+  </g>
+</g>
+<text x="138" y="76" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="-2"><tspan fill="#F3F8F6">Clear</tspan><tspan fill="#1F6E5D">Gate</tspan></text>
+</svg>
+  <g fill="#f4f8f7" font-family="DejaVu Sans, Arial, sans-serif" font-size="56" font-weight="600">
+    <text x="64" y="246">Medication-access infrastructure</text>
+    <text x="64" y="320">for ACNU programs.</text>
+  </g>
+  <text x="64" y="395" fill="#c5d2ce" font-family="DejaVu Sans, Arial, sans-serif" font-size="28">Gatehouse program control. Passage authorization.</text>
+  <path d="M64 472H1136" stroke="#385460"/>
+  <text x="64" y="539" fill="#8fcdbf" font-family="DejaVu Sans, Arial, sans-serif" font-size="26">cleargateaccess.com</text>
+  <text x="1136" y="539" text-anchor="end" fill="#c5d2ce" font-family="DejaVu Sans, Arial, sans-serif" font-size="23">Explore the demonstration</text>
+</svg>

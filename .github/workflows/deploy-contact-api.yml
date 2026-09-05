@@ -1,11 +1,6 @@
 name: Deploy ClearGate contact API
 
 on:
-  push:
-    branches: ["main", "master"]
-    paths:
-      - "contact-api-worker/**"
-      - ".github/workflows/deploy-contact-api.yml"
   workflow_dispatch:
 
 permissions:
@@ -17,6 +12,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

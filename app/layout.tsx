@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
+const commissioner = localFont({
+  src: "../public/fonts/commissioner-latin.woff2",
+  variable: "--font-commissioner",
+  display: "swap",
+  weight: "100 900",
+});
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://cleargateaccess.com").replace(/\/$/, "");
 const publicAsset = (path: string) => `${basePath}${path}`;
@@ -9,9 +16,9 @@ const organizationId = `${siteUrl}/#organization`;
 const websiteId = `${siteUrl}/#website`;
 const serviceId = `${siteUrl}/#service`;
 
-const title = "ClearGate | Controlled Medication Access Infrastructure";
+const title = "ClearGate | ACNU Program & Medication-Access Infrastructure";
 const description =
-  "ClearGate helps pharmaceutical sponsors design, validate, operate, authorize, and evidence technology-assisted medication access, beginning with ACNU programs.";
+  "Explore ClearGate’s Gatehouse and Passage platforms for ACNU program design, validation, and pharmacy authorization. Discuss a sponsor or partner demonstration.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
@@ -57,13 +64,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     title,
     description,
-    images: [{ url: absoluteAsset("/og-cleargate.png"), width: 1200, height: 630, alt: "ClearGate — verified access, confident delivery" }],
+    images: [{ url: absoluteAsset("/social-card.png"), width: 1200, height: 630, alt: "ClearGate medication-access infrastructure for ACNU programs. Gatehouse program control and Passage authorization." }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: [absoluteAsset("/og-cleargate.png")],
+    images: [absoluteAsset("/social-card.png")],
   },
 };
 
@@ -74,6 +81,7 @@ const structuredData = {
       "@type": "Organization",
       "@id": organizationId,
       name: "ClearGate",
+      legalName: "ClearGate Technologies, Inc.",
       url: `${siteUrl}/`,
       logo: {
         "@type": "ImageObject",
@@ -81,7 +89,7 @@ const structuredData = {
       },
       email: "contact@cleargateaccess.com",
       description:
-        "Controlled infrastructure for pharmaceutical sponsors developing and operating technology-assisted medication-access programs, with ACNU as the initial program focus.",
+        "Medication-access infrastructure for pharmaceutical sponsors, initially focused on ACNU programs. Gatehouse and Passage are available as working demonstrations.",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "business inquiries",
@@ -96,6 +104,17 @@ const structuredData = {
       name: "ClearGate",
       description,
       inLanguage: "en-US",
+      publisher: { "@id": organizationId },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/#webpage`,
+      url: `${siteUrl}/`,
+      name: title,
+      description,
+      inLanguage: "en-US",
+      isPartOf: { "@id": websiteId },
+      about: { "@id": serviceId },
       publisher: { "@id": organizationId },
     },
     {
@@ -117,7 +136,7 @@ const structuredData = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={commissioner.variable}>
       <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />

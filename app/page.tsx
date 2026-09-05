@@ -1,8 +1,8 @@
 import ContactForm from "./components/ContactForm";
 
-const Check = () => <span className="status-check" aria-hidden="true">✓</span>;
+const Check = () => <span className="status-check" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="m3 8 3 3 7-7" /></svg></span>;
 
-const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
+const Arrow = () => <svg className="arrow" aria-hidden="true" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 10h12m-5-5 5 5-5 5" /></svg>;
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const asset = (path: string) => `${basePath}${path}`;
@@ -22,8 +22,9 @@ export default function Home() {
             <a href="#products">Products</a>
             <a href="#evidence">Evidence</a>
             <a href="#partners">Partners</a>
+            <a href="#questions">FAQs</a>
           </nav>
-          <a className="nav-cta" href="#contact">Discuss a program <Arrow /></a>
+          <a className="nav-cta" href="#contact">Discuss your program <Arrow /></a>
         </div>
       </header>
 
@@ -31,25 +32,25 @@ export default function Home() {
         <section className="hero" id="top" aria-labelledby="hero-heading">
           <div className="shell hero-copy-grid">
             <div className="hero-copy">
-              <p className="hero-context">Controlled medication-access infrastructure for pharmaceutical sponsors</p>
-              <h1 id="hero-heading">Build the access pathway. Control every handoff.</h1>
+              <h1 id="hero-heading">Medication-access infrastructure for ACNU programs.</h1>
             </div>
             <div className="hero-support">
-              <p>ClearGate translates sponsor-approved criteria into deterministic program logic, validated releases, minimal authorization, downstream verification, and reconstructable evidence—from development through controlled transaction.</p>
+              <p>ClearGate helps pharmaceutical sponsors connect program design, access decisions, and pharmacy verification. Gatehouse manages the program. Passage verifies authorization at checkout.</p>
               <div className="hero-actions">
-                <a className="button button-light" href="#contact">Discuss a sponsor program</a>
-                <a className="text-link" href="#products">See the operating model <Arrow /></a>
+                <a className="button button-light" href="#contact">Discuss your program</a>
+                <a className="text-link" href="#products">Explore the products <Arrow /></a>
               </div>
             </div>
           </div>
 
           <div className="shell hero-scope" aria-label="ClearGate platform scope">
-            <div><span>Initial program focus</span><strong>Additional Condition for Nonprescription Use</strong></div>
-            <div><span>Operating span</span><strong>Program design through retail transaction</strong></div>
-            <div><span>Decision model</span><strong>Deterministic and sponsor controlled</strong></div>
+            <div><span>Initial focus</span><strong>Additional Condition for Nonprescription Use (ACNU)</strong></div>
+            <div><span>For sponsors and partners</span><strong>From program design to pharmacy checkout</strong></div>
+            <div><span>Current stage</span><strong>Working demonstration · seeking design partners</strong></div>
           </div>
 
-          <div className="shell product-stage">
+          <details className="shell product-stage demo-disclosure">
+            <summary>Explore a Gatehouse release example <span>Illustrative workspace · fictional data</span></summary>
             <figure className="product-frame sponsor-frame" aria-label="Synthetic sponsor program workspace demonstration">
               <div className="product-topbar">
                 <div className="window-brand">
@@ -80,7 +81,7 @@ export default function Home() {
                     <li>Vigilance</li>
                     <li>Evidence</li>
                   </ul>
-                  <div className="sidebar-foot"><span className="system-dot" /> All services operational</div>
+                  <div className="sidebar-foot"><span className="system-dot" /> Example service status</div>
                 </aside>
 
                 <div className="release-workspace">
@@ -124,7 +125,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="lineage-path">
-                        <span><b>REQUIREMENT</b>REQ-VRX-014</span><i>→</i><span><b>QUESTION</b>Q-014</span><i>→</i><span><b>RULE</b>VRX-003</span><i>→</i><span><b>TEST</b>TEST-083</span><i>→</i><span className="passed"><b>RESULT</b>PASS</span>
+                        <span><b>REQUIREMENT</b>REQ-VRX-014</span><i aria-hidden="true"><Arrow /></i><span><b>QUESTION</b>Q-014</span><i aria-hidden="true"><Arrow /></i><span><b>RULE</b>VRX-003</span><i aria-hidden="true"><Arrow /></i><span><b>TEST</b>TEST-083</span><i aria-hidden="true"><Arrow /></i><span className="passed"><b>RESULT</b>PASS</span>
                       </div>
                     </section>
 
@@ -141,25 +142,24 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <figcaption className="demo-bar"><span>Synthetic data · fictional products, people, approvals, and metrics.</span></figcaption>
+              <figcaption className="demo-bar"><span>Illustrative workspace. All products, people, approvals, and metrics are fictional.</span></figcaption>
             </figure>
-          </div>
+          </details>
         </section>
 
         <section className="platform-section" id="platform" aria-labelledby="platform-heading">
           <div className="shell platform-grid">
             <div className="section-statement">
-              <span className="section-label">The operating problem</span>
-              <h2 id="platform-heading">The digital assessment is only the visible step.</h2>
+              <h2 id="platform-heading">Connect the whole medication-access program.</h2>
             </div>
             <div className="platform-copy">
-              <p className="lede">ClearGate is initially designed around Additional Condition for Nonprescription Use (ACNU) programs, where a product-specific technology condition may become part of the path to nonprescription access.</p>
-              <p>That path requires more than a questionnaire. Sponsor intent must become controlled software; releases must be validated; permitted outcomes must create minimal, verifiable authorization; and the operating history must remain reconstructable after launch.</p>
-              <p className="scope-note"><strong>Built beyond one regulatory pathway.</strong> The same release, authorization, integration, audit, and evidence layers can later support clinician-mediated prescription workflows. In those programs, licensed clinicians retain medical judgment and prescribing authority.</p>
+              <p className="lede">ACNU means Additional Condition for Nonprescription Use. Under the FDA framework, a consumer must complete an additional condition to obtain and appropriately use a specific nonprescription drug.</p>
+              <p>ClearGate is designed to support technology-based ACNU programs: turn sponsor-defined criteria into versioned questions and rules, validate changes, verify authorization, and retain the records needed to review what happened.</p>
+              <p className="scope-note"><strong>Designed for sponsor-specific implementation.</strong> The demonstration is not a commercially qualified deployment. Each implementation requires validation, security qualification, operating procedures, partner certification, and service agreements.</p>
               <dl className="principle-list">
-                <div><dt>Product-specific</dt><dd>Each program keeps its own approved questions, rules, messages, measurements, authorization policy, and release history.</dd></div>
+                <div><dt>Product-specific</dt><dd>Each program has its own questions, rules, consumer messages, authorization policies, and release history.</dd></div>
                 <div><dt>Deterministic</dt><dd>Identical inputs under the same approved version produce the same result. Generative AI does not make the qualification decision.</dd></div>
-                <div><dt>Operational</dt><dd>Study, runtime, verification, monitoring, vigilance, CAPA, and evidence remain connected to one controlled lineage.</dd></div>
+                <div><dt>Traceable</dt><dd>Study records, access decisions, transaction events, safety signals, and corrective actions remain linked to the program version.</dd></div>
               </dl>
             </div>
           </div>
@@ -168,43 +168,42 @@ export default function Home() {
         <section className="products-section" id="products" aria-labelledby="products-heading">
           <div className="shell products-intro">
             <div>
-              <span className="section-label light">Platform architecture</span>
-              <h2 id="products-heading">Two products. One controlled operating model.</h2>
+              <h2 id="products-heading">Gatehouse and Passage. Connected, with clear roles.</h2>
             </div>
-            <p>The platform separates sponsor program control from downstream transaction enforcement. Each product has a narrow responsibility, explicit trust boundary, and auditable handoff.</p>
+            <p>Gatehouse controls how the program is defined and run. Passage connects its approved outcomes to pharmacy and ecommerce verification. A signed handoff links the two.</p>
           </div>
 
           <div className="shell product-system">
             <article className="system-row">
               <div className="system-identity"><span>Program platform</span><strong>Gatehouse</strong></div>
-              <div className="system-copy"><h3>Design, validate, release, and operate the program.</h3><p>Sponsor-approved requirements become controlled questionnaires, deterministic rules, study configurations, runtime decisions, signed authorization assertions, and evidence.</p></div>
-              <ul className="system-capabilities"><li>Portfolio and program configuration</li><li>Questionnaire and rule editing</li><li>Study deployments and scenarios</li><li>Validation and release approvals</li><li>Runtime and signed authorization</li><li>Vigilance, incidents, CAPA, evidence</li></ul>
+              <div className="system-copy"><h3>Gatehouse: design and operate your program.</h3><p>Configure questionnaires and rules, prepare studies, validate releases, and review access decisions. Gatehouse records the program version behind each decision and signs the handoff to Passage.</p></div>
+              <ul className="system-capabilities"><li>Portfolio and program configuration</li><li>Questionnaire and rule editing</li><li>Study deployments and scenarios</li><li>Validation and release approvals</li><li>Runtime and signed authorization</li><li>Safety monitoring, corrective actions, evidence</li></ul>
             </article>
 
             <div className="handoff-strip" aria-label="Controlled authorization handoff">
-              <span>Approved release</span><i>→</i><span>Deterministic decision</span><i>→</i><strong>Signed, minimal handoff</strong><i>→</i><span>Channel verification</span>
+              <span>Approved release</span><i aria-hidden="true"><Arrow /></i><span>Deterministic decision</span><i aria-hidden="true"><Arrow /></i><strong>Signed, minimal handoff</strong><i aria-hidden="true"><Arrow /></i><span>Channel verification</span>
             </div>
 
             <article className="system-row">
               <div className="system-identity"><span>Authorization network</span><strong>Passage</strong></div>
-              <div className="system-copy"><h3>Verify and enforce access at the transaction boundary.</h3><p>A standards-neutral service validates approved upstream fulfillment, issues or verifies a pharmacy-verifiable authorization, enforces policy, and records each transaction state without receiving questionnaire answers.</p></div>
-              <ul className="system-capabilities"><li>Canonical product registry</li><li>Signed assertion and authorization validation</li><li>Verify, redeem, retry, and reverse</li><li>POS and ecommerce adapter model</li><li>Privacy-minimized partner responses</li><li>Append-only transaction ledger</li></ul>
+              <div className="system-copy"><h3>Passage: verify authorization at checkout.</h3><p>Passage checks an approved upstream result, issues or verifies an authorization, and applies transaction policies. Pharmacy and ecommerce partners receive the information needed to verify access without receiving questionnaire answers.</p></div>
+              <ul className="system-capabilities"><li>Shared product registry</li><li>Signed assertion and authorization validation</li><li>Verify, redeem, retry, and reverse</li><li>Point-of-sale and ecommerce integrations</li><li>Minimal data in partner responses</li><li>Append-only transaction ledger</li></ul>
             </article>
           </div>
 
-          <p className="shell interoperability-note"><strong>Modular by design:</strong> the authorization network can accept an approved fulfillment from the ClearGate program platform or another approved upstream operationalization. It does not make the clinical decision and does not turn an authorization into a prescription.</p>
+          <p className="shell interoperability-note"><strong>Built to work with other systems.</strong> Passage can accept an approved result from Gatehouse or another approved upstream system. An authorization is not a prescription; clinical and prescribing responsibilities remain with the appropriate parties.</p>
         </section>
 
         <section className="network-demo-section" id="authorization-network" aria-labelledby="network-demo-heading">
           <div className="shell network-demo-head">
-            <div><span className="section-label">Downstream transaction surface</span><h2 id="network-demo-heading">Authorization that can move through the channel.</h2></div>
-            <p>Verification, redemption, idempotent retry, reversal, product lifecycle control, and transaction lineage are demonstrated across pharmacy and ecommerce reference flows.</p>
+            <div><h2 id="network-demo-heading">Verify access in pharmacy and ecommerce workflows.</h2></div>
+            <p>The Passage demonstration shows authorization checks, single-use redemption, safe retries, reversals, and a record of each transaction. The pharmacy and product below are fictional.</p>
           </div>
 
           <figure className="shell network-frame" aria-label="Synthetic authorization network and pharmacy verification demonstration">
             <div className="network-topbar">
-              <img src={asset("/passage-logo.png")} alt="Passage" width="150" height="48" />
-              <div><span className="network-health"><i /> All services operational</span></div>
+              <img src={asset("/passage-logo.png")} alt="Passage" width="150" height="48" loading="lazy" />
+              <div><span className="network-health"><i /> Example service status</span></div>
             </div>
             <div className="network-workspace">
               <aside className="network-sidebar" aria-label="Authorization network demonstration navigation">
@@ -233,7 +232,7 @@ export default function Home() {
                   </aside>
                 </div>
 
-                <div className="ledger-preview">
+                <div className="ledger-preview" role="region" aria-label="Example transaction ledger; scroll horizontally on small screens" tabIndex={0}>
                   <div className="ledger-heading"><strong>Recent network activity</strong><span>Immutable transaction lineage</span></div>
                   <div className="ledger-row ledger-head"><span>Time</span><span>Event</span><span>Actor</span><span>Authorization</span><span>Result</span></div>
                   <div className="ledger-row"><span>10:32:08</span><span>VERIFY</span><span>BWPG-001 / AVL-014</span><span>AUTH-VRX-829401</span><span className="result-ok">VALID</span></div>
@@ -248,8 +247,8 @@ export default function Home() {
 
         <section className="evidence-section" id="evidence" aria-labelledby="evidence-heading">
           <div className="shell evidence-intro">
-            <div><span className="section-label light">Evidence lineage</span><h2 id="evidence-heading">Every material decision remains reconstructable.</h2></div>
-            <p>ClearGate connects sponsor intent, configuration, validation, approval, release, assessment, decision, authorization, verification, and transaction state in one inspectable operating history.</p>
+            <div><h2 id="evidence-heading">Trace each decision to its program version.</h2></div>
+            <p>Review which rules were used, which release was approved, and how an authorization reached the retailer. The example below shows how assessment and transaction records stay connected.</p>
           </div>
 
           <div className="shell evidence-board">
@@ -268,60 +267,74 @@ export default function Home() {
         </section>
 
         <section className="capabilities-section" id="capabilities" aria-labelledby="capabilities-heading">
-          <div className="shell capabilities-head"><h2 id="capabilities-heading">Full lifecycle coverage without stitching together point solutions.</h2><p>ClearGate’s operating model covers the work around an access pathway—not simply the front-end assessment.</p></div>
+          <div className="shell capabilities-head"><h2 id="capabilities-heading">From program design to ongoing oversight.</h2><p>Explore the workflows demonstrated across Gatehouse and Passage.</p></div>
           <div className="shell capability-rows">
-            <article><span>Feasibility</span><h3>Portfolio and program definition</h3><p>Candidate products, sponsor objectives, product releases, operationalizations, and program boundaries remain explicitly controlled.</p><ul><li>Portfolio</li><li>Program ownership</li><li>Tenant isolation</li></ul></article>
+            <article><span>Feasibility</span><h3>Portfolio and program definition</h3><p>Define candidate products, sponsor objectives, program owners, system boundaries, and release versions.</p><ul><li>Portfolio</li><li>Program ownership</li><li>Tenant isolation</li></ul></article>
             <article><span>Design</span><h3>Questionnaires and deterministic rules</h3><p>Approved questions, criteria, reason codes, outcome messages, rule tests, and change history stay versioned and traceable.</p><ul><li>Designer</li><li>Rules</li><li>Validation</li></ul></article>
             <article><span>Research</span><h3>Study deployment and evidence</h3><p>Study-specific configuration supports sponsor and research workflows while preserving the relationship to the future operating model.</p><ul><li>Study versions</li><li>Scenarios</li><li>Evidence export</li></ul></article>
-            <article><span>Operate</span><h3>Runtime, decisions, and authorization</h3><p>Consumers receive only the approved experience while decisions remain deterministic, version-bound, and ready for minimal signed handoff.</p><ul><li>Six outcomes</li><li>Fail-closed</li><li>Authorization policy</li></ul></article>
+            <article><span>Operate</span><h3>Runtime, decisions, and authorization</h3><p>Consumers receive only the approved experience while decisions remain deterministic, version-bound, and ready for minimal signed handoff.</p><ul><li>Defined outcomes</li><li>Fail-closed</li><li>Authorization policy</li></ul></article>
             <article><span>Integrate</span><h3>Pharmacy, ecommerce, and channel adapters</h3><p>Verification and transaction enforcement stay separate from clinical logic through scoped, versioned partner contracts.</p><ul><li>POS</li><li>Ecommerce</li><li>Verify / redeem / reverse</li></ul></article>
-            <article><span>Control</span><h3>Vigilance, incidents, CAPA, and audit</h3><p>Signals become investigations, affected records can be identified, corrective action stays linked, and released history cannot be silently rewritten.</p><ul><li>Vigilance</li><li>CAPA</li><li>Evidence lineage</li></ul></article>
+            <article><span>Control</span><h3>Safety monitoring, corrective actions, and audit</h3><p>Signals become investigations, affected records can be identified, corrective action stays linked, and released history cannot be silently rewritten.</p><ul><li>Vigilance</li><li>Corrective and preventive action (CAPA)</li><li>Evidence lineage</li></ul></article>
           </div>
-          <p className="shell demo-status-note"><strong>Current status:</strong> production-shaped enterprise demonstration. Commercial implementations require sponsor-specific validation, security qualification, operating procedures, partner certification, and contractual service design.</p>
+          <p className="shell demo-status-note"><strong>Demonstration scope:</strong> the screens use fictional data. Commercial use requires sponsor-specific validation, security qualification, partner certification, operating procedures, and service agreements.</p>
         </section>
 
         <section className="control-section" id="control" aria-labelledby="control-heading">
-          <div className="shell control-head"><div><span className="section-label amber">Designed for adverse conditions</span><h2 id="control-heading">Failure handling is part of the product.</h2></div><p>Signals become investigations, affected decisions and transactions can be identified, corrective action stays linked to evidence, and uncertainty never becomes qualification or a valid authorization.</p></div>
+          <div className="shell control-head"><div><h2 id="control-heading">Keep control when something goes wrong.</h2></div><p>Trace an issue to affected decisions and transactions, investigate its cause, and link corrective action to a controlled release. The example below illustrates that workflow.</p></div>
           <div className="shell incident-record"><div className="incident-header"><div><span className="signal-dot" /> Open investigation</div><strong>CASE-ACNU-0004</strong><span>Severity 2 · Synthetic demo</span></div><div className="incident-timeline"><div><span>Signal</span><strong>Malformed lab units</strong><small>14:02</small></div><div><span>Impact</span><strong>Assessments identified</strong><small>14:06</small></div><div><span>Root cause</span><strong>Adapter validation gap</strong><small>15:14</small></div><div><span>CAPA</span><strong>CAPA-0012 opened</strong><small>15:37</small></div><div className="resolved"><span>Controlled change</span><strong>Corrected release validated</strong><small>18:22</small></div></div></div>
-          <div className="shell control-principles"><article><strong>Fail-closed behavior</strong><p>No reliable decision or authorization state becomes permitted access.</p></article><article><strong>Immutable released history</strong><p>Released configuration and ledger events cannot be silently rewritten.</p></article><article><strong>Separation of duties</strong><p>Authors, approvers, operators, source systems, and retailers remain distinct.</p></article><article><strong>Data minimization</strong><p>Each downstream actor receives only what its approved transaction requires.</p></article></div>
+          <div className="shell control-principles"><article><strong>Fail-closed behavior</strong><p>If a reliable decision or valid authorization is unavailable, access is not permitted.</p></article><article><strong>Immutable released history</strong><p>Released configuration and ledger events cannot be silently rewritten.</p></article><article><strong>Separation of duties</strong><p>Authors, approvers, operators, source systems, and retailers remain distinct.</p></article><article><strong>Data minimization</strong><p>Each downstream actor receives only what its approved transaction requires.</p></article></div>
         </section>
 
         <section className="partners-section" id="partners" aria-labelledby="partners-heading">
-          <div className="shell partners-intro"><div><span className="section-label">Design and launch partners</span><h2 id="partners-heading">Help shape the operating standard.</h2></div><p>ClearGate is seeking a small number of serious partners who can bring a real program, research objective, transaction channel, or regulated-operations perspective into the next stage of development.</p></div>
+          <div className="shell partners-intro"><div><h2 id="partners-heading">Build the next stage with ClearGate.</h2></div><p>We are seeking pharmaceutical sponsors, research organizations, pharmacy technology teams, and advisors to help shape program requirements and plan pilot implementations.</p></div>
           <div className="shell partner-rows">
-            <article><div className="partner-type"><span>Sponsor</span><h3>Pharmaceutical and consumer-health companies</h3></div><p>Best fit: a commercially meaningful asset, an active or planned Rx-to-nonprescription program, or a controlled-access use case without a mature internal software platform.</p><ul><li>Candidate-program feasibility</li><li>Design engagement or LOI</li><li>Sponsor-led pilot planning</li></ul></article>
-            <article><div className="partner-type"><span>Research</span><h3>CROs and consumer-behavior research organizations</h3></div><p>Partners equipped to design or operate label comprehension, self-selection, actual-use, human-factors, or adjacent research against a controlled program configuration.</p><ul><li>Study workflow design</li><li>Research-site operations</li><li>Evidence and data handoff</li></ul></article>
+            <article><div className="partner-type"><span>Sponsor</span><h3>Pharmaceutical and consumer-health companies</h3></div><p>Discuss a candidate product, an active or planned Rx-to-nonprescription program, or a medication-access workflow that needs supporting infrastructure.</p><ul><li>Candidate-program feasibility</li><li>Design engagement</li><li>Sponsor-led pilot planning</li></ul></article>
+            <article><div className="partner-type"><span>Research</span><h3>Contract research and consumer-behavior research organizations</h3></div><p>Partners equipped to design or operate label comprehension, self-selection, actual-use, human-factors, or adjacent research against a controlled program configuration.</p><ul><li>Study workflow design</li><li>Research-site operations</li><li>Evidence and data handoff</li></ul></article>
             <article><div className="partner-type"><span>Channel</span><h3>Pharmacy, retailer, and ecommerce technology teams</h3></div><p>Partners willing to shape how product detection, verification, redemption, reversal, exception handling, and channel accountability should work in practice.</p><ul><li>Reference adapter collaboration</li><li>POS or ecommerce pilot</li><li>Partner certification model</li></ul></article>
             <article><div className="partner-type"><span>Advisory</span><h3>Regulatory, quality, vigilance, and industry operators</h3></div><p>Experienced operators who can pressure-test responsibility boundaries, validation strategy, failure procedures, quality systems, and sponsor buying requirements.</p><ul><li>Regulatory and quality review</li><li>Vigilance operating model</li><li>Strategic or technical advisory</li></ul></article>
           </div>
-          <div className="shell first-engagement"><div><h3>A useful first engagement has four parts.</h3><p>We can begin before every downstream vendor or implementation detail is selected.</p></div><ol><li><span>1</span><strong>Choose a program</strong><small>Candidate asset, study, pathway, or channel pilot</small></li><li><span>2</span><strong>Define the boundary</strong><small>Owners, criteria, systems, evidence, and success measures</small></li><li><span>3</span><strong>Configure the model</strong><small>Synthetic workflow, rules, authorization, and integrations</small></li><li><span>4</span><strong>Plan the evidence</strong><small>Validation, research, pilot, and operating readiness</small></li></ol></div>
+          <div className="shell first-engagement"><div><h3>A practical path to a pilot.</h3><p>We can begin before every downstream vendor or implementation detail is selected.</p></div><ol><li><span>1</span><strong>Choose a program</strong><small>Candidate asset, study, pathway, or channel pilot</small></li><li><span>2</span><strong>Define the boundary</strong><small>Owners, criteria, systems, evidence, and success measures</small></li><li><span>3</span><strong>Configure the model</strong><small>Synthetic workflow, rules, authorization, and integrations</small></li><li><span>4</span><strong>Plan the evidence</strong><small>Validation, research, pilot, and operating readiness</small></li></ol></div>
         </section>
 
         <section className="responsibility-section" id="responsibility" aria-labelledby="responsibility-heading">
-          <div className="shell responsibility-head"><h2 id="responsibility-heading">Clear roles. No hidden transfer of judgment.</h2><p>ClearGate operationalizes approved medication-access programs without becoming the sponsor, prescriber, pharmacy, or independent regulatory decision-maker.</p></div>
+          <div className="shell responsibility-head"><h2 id="responsibility-heading">Clear responsibilities at every stage.</h2><p>Sponsors retain clinical criteria, regulatory strategy, and product obligations. ClearGate provides the software that implements program rules and records its operation.</p></div>
           <div className="shell responsibility-grid"><article><span>Pharmaceutical sponsor</span><h3>Owns the product and program.</h3><ul><li>Clinical criteria and regulatory strategy</li><li>Approved consumer content</li><li>Drug safety and sponsor obligations</li><li>Program oversight and accountability</li></ul></article><article className="cleargate-role"><span>ClearGate</span><h3>Provides the controlled operating layer.</h3><ul><li>Configuration and deterministic execution</li><li>Validation evidence and release controls</li><li>Authorization exchange and integration</li><li>Monitoring, incidents, and traceability</li></ul></article><article><span>Licensed clinician · future pathways</span><h3>Retains medical judgment.</h3><ul><li>Clinical evaluation where required</li><li>Prescribing authority</li><li>Clinician-patient relationship</li><li>Professional and jurisdictional obligations</li></ul></article><article><span>Retail or research partner</span><h3>Performs its approved channel role.</h3><ul><li>Transaction or study operations</li><li>Authorization enforcement where applicable</li><li>Partner-specific consumer obligations</li><li>Evidence and exception handling</li></ul></article></div>
+        </section>
+
+        <section className="faq-section" id="questions" aria-labelledby="questions-heading">
+          <div className="shell faq-grid">
+            <div><h2 id="questions-heading">Questions about ClearGate and ACNU.</h2><p>Understand the framework, the products, and what comes next.</p></div>
+            <div className="faq-list">
+              <details open><summary>What is an ACNU program?</summary><p>An Additional Condition for Nonprescription Use is an extra step a consumer must complete to obtain and appropriately use a particular nonprescription drug when labeling alone is insufficient. A technology-based assessment may support that condition. Requirements and FDA approval are specific to the drug product.</p><p><a href="https://www.fda.gov/drugs/over-counter-otc-nonprescription-drugs/nonprescription-drug-product-additional-condition-nonprescription-use">Read the FDA’s ACNU framework</a>.</p></details>
+              <details><summary>How do Gatehouse and Passage work together?</summary><p>Gatehouse manages program configuration, validation, releases, and access decisions. Passage verifies the signed upstream result and manages authorization checks and transaction records for pharmacy and ecommerce partners.</p></details>
+              <details><summary>Is ClearGate ready for commercial use?</summary><p>ClearGate is currently a working enterprise demonstration using fictional data. A commercial implementation requires sponsor-specific validation, security qualification, operating procedures, partner certification, and service agreements. We are seeking design and pilot partners.</p></details>
+              <details><summary>Does ClearGate make clinical or prescribing decisions?</summary><p>Gatehouse applies sponsor-defined rules consistently; generative AI does not decide qualification. Sponsors retain responsibility for clinical criteria and regulatory strategy. Clinician-mediated prescription workflows are a potential future extension, in which licensed clinicians would retain medical judgment and prescribing authority.</p></details>
+            </div>
+          </div>
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-heading">
           <div className="shell contact-grid">
             <div className="contact-statement">
               <img src={asset("/cleargate-symbol-reversed.svg")} alt="" width="84" height="84" />
-              <span className="section-label light">Sponsor and partner inquiries</span>
-              <h2 id="contact-heading">Start with the program—not a software shopping list.</h2>
-              <p>Bring a candidate asset, active ACNU or switch program, study requirement, pharmacy workflow, or clinician-mediated access concept. We will start with responsibility boundaries, success criteria, and the smallest useful demonstration or design engagement.</p>
+              <h2 id="contact-heading">Discuss your medication-access program.</h2>
+              <p>Tell us about your product, program stage, or integration needs. We can walk through Gatehouse and Passage and discuss the requirements for a design engagement or pilot.</p>
               <dl className="contact-expectations">
                 <div><dt>Good first attendees</dt><dd>Commercial, regulatory, clinical, quality, research, and technical owners</dd></div>
                 <div><dt>Useful starting material</dt><dd>Program hypothesis, target channel, open risks, and timing</dd></div>
                 <div><dt>Current priority</dt><dd>Design sponsors, research collaborators, pilot channels, and advisors</dd></div>
               </dl>
-              <p className="contact-alternative">Prefer email? <a href="mailto:contact@cleargateaccess.com">contact@cleargateaccess.com</a></p>
+              <p className="contact-alternative">Email the team: <a href="mailto:contact@cleargateaccess.com">contact@cleargateaccess.com</a></p>
             </div>
             <ContactForm />
           </div>
         </section>
       </main>
 
-      <footer className="site-footer"><div className="shell footer-grid"><img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="174" height="51" /><div><span>Controlled medication-access infrastructure</span><span>ACNU is the initial program focus</span></div><a href="mailto:contact@cleargateaccess.com">Contact</a></div></footer>
+      <footer className="site-footer">
+        <div className="shell footer-grid"><img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="174" height="51" /><div><span>Controlled medication-access infrastructure</span><span>ACNU is the initial program focus</span></div><nav aria-label="Footer navigation"><a href="#products">Products</a><a href="#questions">FAQs</a><a href="#contact">Contact</a></nav></div>
+        <p className="shell footer-copyright">© 2026 ClearGate Technologies, Inc. All rights reserved.</p>
+      </footer>
     </>
   );
 }
