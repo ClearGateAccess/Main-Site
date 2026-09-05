@@ -331,7 +331,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer"><div className="shell footer-grid"><img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="174" height="51" /><div><span>Controlled medication-access infrastructure</span><span>ACNU is the initial program focus</span></div><nav aria-label="Footer navigation"><a href="#products">Products</a><a href="#questions">FAQs</a><a href="#contact">Contact</a></nav></div></footer>
+      <footer className="site-footer">
+        <div className="shell footer-grid"><img src={asset("/cleargate-logo-reversed.svg")} alt="ClearGate" width="174" height="51" /><div><span>Controlled medication-access infrastructure</span><span>ACNU is the initial program focus</span></div><nav aria-label="Footer navigation"><a href="#products">Products</a><a href="#questions">FAQs</a><a href="#contact">Contact</a></nav></div>
+        <p className="shell footer-copyright">© 2026 ClearGate Technologies, Inc. All rights reserved.</p>
+      </footer>
     </>
   );
 }

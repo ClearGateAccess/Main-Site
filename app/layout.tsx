@@ -81,6 +81,7 @@ const structuredData = {
       "@type": "Organization",
       "@id": organizationId,
       name: "ClearGate",
+      legalName: "ClearGate Technologies, Inc.",
       url: `${siteUrl}/`,
       logo: {
         "@type": "ImageObject",
